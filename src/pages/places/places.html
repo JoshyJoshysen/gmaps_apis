@@ -11,7 +11,7 @@
     <ion-input #search [(ngModel)]="searchString" autocorrect="off" autocapitalize="off" spellcheck="off"></ion-input>
   </ion-item>
   <br>
-  <agm-map [latitude]="mapsettings.lat" [longitude]="mapsettings.lng" [zoom]="mapsettings.zoom" (mapReady)="mapReady($event)">
+  <agm-map *ngIf="mapsettings" [latitude]="mapsettings.lat" [longitude]="mapsettings.lng" [zoom]="mapsettings.zoom" (mapReady)="mapReady($event)">
     <agm-marker
       *ngFor="let marker of markers"
       [latitude]="marker.lat"

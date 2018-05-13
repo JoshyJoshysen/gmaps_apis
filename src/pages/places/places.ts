@@ -16,11 +16,7 @@ export class PlacesPage {
   
   map: any;
   
-  mapsettings = {
-    lat: 51.678418,
-    lng: 7.809007,
-    zoom: 14
-  };
+  mapsettings = {};
   markers = [];
   
   searchString: string;
@@ -40,6 +36,7 @@ export class PlacesPage {
           navigator.geolocation.getCurrentPosition((position) => {
             this.mapsettings.lat = position.coords.latitude;
             this.mapsettings.lng = position.coords.longitude;
+            this.mapsettings.zoom = 14;
             const loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             this.doSearch(loc);
           });
@@ -66,7 +63,6 @@ export class PlacesPage {
   }
   
   doSearch(loc: LatLng){
-  
     let request: PlaceSearchRequest = {
       location: loc,
       radius: 500,
@@ -85,7 +81,6 @@ export class PlacesPage {
             lng: place.geometry.location.lng(),
           };
           this.markers.push(m);
-          console.log(this.markers);
         }
       }
     });
