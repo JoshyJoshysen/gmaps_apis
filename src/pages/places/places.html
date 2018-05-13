@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Places</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating color="primary">Search for Location</ion-label>
+    <ion-input #search [(ngModel)]="searchString" autocorrect="off" autocapitalize="off" spellcheck="off"></ion-input>
+  </ion-item>
+  <br>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</ion-content>
