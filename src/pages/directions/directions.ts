@@ -49,7 +49,7 @@ export class DirectionsPage {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         results.forEach((place) => {
           console.log(place);
-          //place a marker on the location of
+          //place a marker on the location of a place
           const marker = new google.maps.Marker({
             position: place.geometry.location,
             map: this.map,
