@@ -70,8 +70,6 @@ export class DirectionsPage {
     let directionsService = new google.maps.DirectionsService();
     let directionsDisplay = new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(this.map);
-  
-    console.log("calcDirection");
     
     const request = {
       origin: origin,
