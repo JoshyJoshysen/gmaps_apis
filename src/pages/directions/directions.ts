@@ -11,7 +11,6 @@ declare var google;
 export class DirectionsPage {
   @ViewChild('map') mapRef: ElementRef;
   map: google.maps.Map;
-  nearbyLocations = [];
 
   constructor() {
   
