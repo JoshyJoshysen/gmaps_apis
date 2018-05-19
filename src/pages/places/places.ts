@@ -34,9 +34,9 @@ export class PlacesPage {
       () => {
         if (navigator && navigator.geolocation){
           navigator.geolocation.getCurrentPosition((position) => {
-            this.mapsettings.lat = position.coords.latitude;
-            this.mapsettings.lng = position.coords.longitude;
-            this.mapsettings.zoom = 14;
+            this.mapsettings["lat"] = position.coords.latitude;
+            this.mapsettings["lng"] = position.coords.longitude;
+            this.mapsettings["zoom"] = 14;
             const loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             this.doSearch(loc);
           });
@@ -66,7 +66,7 @@ export class PlacesPage {
     let request: PlaceSearchRequest = {
       location: loc,
       radius: 500,
-      types: ['restaurant']
+      types: ['point_of_interest']
     };
     
     let service = new google.maps.places.PlacesService(this.map);
